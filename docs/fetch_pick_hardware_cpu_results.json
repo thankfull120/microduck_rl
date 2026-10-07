@@ -1,0 +1,967 @@
+{
+  "rl_sha": "273afe0b31c4ab365b9ff806a927b63ac92b5ddd",
+  "runtime_sha": "dec725c67ffbbdde7f1de30f8c936b1bf9c1d70e",
+  "versions": {
+    "mujoco": "3.10.0",
+    "torch": "2.9.1+cpu",
+    "cuda_available": false
+  },
+  "models": [
+    {
+      "file": "robot_allcollisions.xml",
+      "nu": 14,
+      "njnt": 15,
+      "policy_order": [
+        "left_hip_yaw",
+        "left_hip_roll",
+        "left_hip_pitch",
+        "left_knee",
+        "left_ankle",
+        "neck_pitch",
+        "head_pitch",
+        "head_yaw",
+        "head_roll",
+        "right_hip_yaw",
+        "right_hip_roll",
+        "right_hip_pitch",
+        "right_knee",
+        "right_ankle"
+      ],
+      "mouth_named_joints": [],
+      "mouth_geoms": {
+        "jaw": [
+          {
+            "body": "jaw_soft",
+            "contype": 0,
+            "conaffinity": 0,
+            "friction": [
+              1.0,
+              0.005,
+              0.0001
+            ],
+            "condim": 3
+          },
+          {
+            "body": "jaw_soft",
+            "contype": 1,
+            "conaffinity": 1,
+            "friction": [
+              1.0,
+              0.005,
+              0.0001
+            ],
+            "condim": 3
+          }
+        ],
+        "jaw_soft": [
+          {
+            "body": "jaw_soft",
+            "contype": 0,
+            "conaffinity": 0,
+            "friction": [
+              1.0,
+              0.005,
+              0.0001
+            ],
+            "condim": 3
+          },
+          {
+            "body": "jaw_soft",
+            "contype": 1,
+            "conaffinity": 1,
+            "friction": [
+              1.0,
+              0.005,
+              0.0001
+            ],
+            "condim": 3
+          }
+        ],
+        "soft_mouth_top": [
+          {
+            "body": "jaw_soft",
+            "contype": 0,
+            "conaffinity": 0,
+            "friction": [
+              1.0,
+              0.005,
+              0.0001
+            ],
+            "condim": 3
+          },
+          {
+            "body": "jaw_soft",
+            "contype": 1,
+            "conaffinity": 1,
+            "friction": [
+              1.0,
+              0.005,
+              0.0001
+            ],
+            "condim": 3
+          }
+        ],
+        "bottom_head_shell": [
+          {
+            "body": "jaw_soft",
+            "contype": 0,
+            "conaffinity": 0,
+            "friction": [
+              1.0,
+              0.005,
+              0.0001
+            ],
+            "condim": 3
+          },
+          {
+            "body": "jaw_soft",
+            "contype": 1,
+            "conaffinity": 1,
+            "friction": [
+              1.0,
+              0.005,
+              0.0001
+            ],
+            "condim": 3
+          }
+        ]
+      },
+      "forward_finite": true
+    },
+    {
+      "file": "robot_allcollisions_backlash.xml",
+      "nu": 14,
+      "njnt": 29,
+      "policy_order": [
+        "left_hip_yaw",
+        "left_hip_roll",
+        "left_hip_pitch",
+        "left_knee",
+        "left_ankle",
+        "neck_pitch",
+        "head_pitch",
+        "head_yaw",
+        "head_roll",
+        "right_hip_yaw",
+        "right_hip_roll",
+        "right_hip_pitch",
+        "right_knee",
+        "right_ankle"
+      ],
+      "mouth_named_joints": [],
+      "mouth_geoms": {
+        "jaw": [
+          {
+            "body": "jaw_soft",
+            "contype": 0,
+            "conaffinity": 0,
+            "friction": [
+              1.0,
+              0.005,
+              0.0001
+            ],
+            "condim": 3
+          },
+          {
+            "body": "jaw_soft",
+            "contype": 1,
+            "conaffinity": 1,
+            "friction": [
+              1.0,
+              0.005,
+              0.0001
+            ],
+            "condim": 3
+          }
+        ],
+        "jaw_soft": [
+          {
+            "body": "jaw_soft",
+            "contype": 0,
+            "conaffinity": 0,
+            "friction": [
+              1.0,
+              0.005,
+              0.0001
+            ],
+            "condim": 3
+          },
+          {
+            "body": "jaw_soft",
+            "contype": 1,
+            "conaffinity": 1,
+            "friction": [
+              1.0,
+              0.005,
+              0.0001
+            ],
+            "condim": 3
+          }
+        ],
+        "soft_mouth_top": [
+          {
+            "body": "jaw_soft",
+            "contype": 0,
+            "conaffinity": 0,
+            "friction": [
+              1.0,
+              0.005,
+              0.0001
+            ],
+            "condim": 3
+          },
+          {
+            "body": "jaw_soft",
+            "contype": 1,
+            "conaffinity": 1,
+            "friction": [
+              1.0,
+              0.005,
+              0.0001
+            ],
+            "condim": 3
+          }
+        ],
+        "bottom_head_shell": [
+          {
+            "body": "jaw_soft",
+            "contype": 0,
+            "conaffinity": 0,
+            "friction": [
+              1.0,
+              0.005,
+              0.0001
+            ],
+            "condim": 3
+          },
+          {
+            "body": "jaw_soft",
+            "contype": 1,
+            "conaffinity": 1,
+            "friction": [
+              1.0,
+              0.005,
+              0.0001
+            ],
+            "condim": 3
+          }
+        ]
+      },
+      "forward_finite": true
+    },
+    {
+      "file": "robot_groundcontact.xml",
+      "nu": 14,
+      "njnt": 15,
+      "policy_order": [
+        "left_hip_yaw",
+        "left_hip_roll",
+        "left_hip_pitch",
+        "left_knee",
+        "left_ankle",
+        "neck_pitch",
+        "head_pitch",
+        "head_yaw",
+        "head_roll",
+        "right_hip_yaw",
+        "right_hip_roll",
+        "right_hip_pitch",
+        "right_knee",
+        "right_ankle"
+      ],
+      "mouth_named_joints": [],
+      "mouth_geoms": {
+        "jaw": [
+          {
+            "body": "jaw_soft",
+            "contype": 0,
+            "conaffinity": 0,
+            "friction": [
+              1.0,
+              0.005,
+              0.0001
+            ],
+            "condim": 3
+          },
+          {
+            "body": "jaw_soft",
+            "contype": 1,
+            "conaffinity": 1,
+            "friction": [
+              1.0,
+              0.005,
+              0.0001
+            ],
+            "condim": 3
+          }
+        ],
+        "jaw_soft": [
+          {
+            "body": "jaw_soft",
+            "contype": 0,
+            "conaffinity": 0,
+            "friction": [
+              1.0,
+              0.005,
+              0.0001
+            ],
+            "condim": 3
+          }
+        ],
+        "soft_mouth_top": [
+          {
+            "body": "jaw_soft",
+            "contype": 0,
+            "conaffinity": 0,
+            "friction": [
+              1.0,
+              0.005,
+              0.0001
+            ],
+            "condim": 3
+          }
+        ],
+        "bottom_head_shell": [
+          {
+            "body": "jaw_soft",
+            "contype": 0,
+            "conaffinity": 0,
+            "friction": [
+              1.0,
+              0.005,
+              0.0001
+            ],
+            "condim": 3
+          },
+          {
+            "body": "jaw_soft",
+            "contype": 1,
+            "conaffinity": 1,
+            "friction": [
+              1.0,
+              0.005,
+              0.0001
+            ],
+            "condim": 3
+          }
+        ]
+      },
+      "forward_finite": true
+    },
+    {
+      "file": "robot_groundcontact_backlash.xml",
+      "nu": 14,
+      "njnt": 29,
+      "policy_order": [
+        "left_hip_yaw",
+        "left_hip_roll",
+        "left_hip_pitch",
+        "left_knee",
+        "left_ankle",
+        "neck_pitch",
+        "head_pitch",
+        "head_yaw",
+        "head_roll",
+        "right_hip_yaw",
+        "right_hip_roll",
+        "right_hip_pitch",
+        "right_knee",
+        "right_ankle"
+      ],
+      "mouth_named_joints": [],
+      "mouth_geoms": {
+        "jaw": [
+          {
+            "body": "jaw_soft",
+            "contype": 0,
+            "conaffinity": 0,
+            "friction": [
+              1.0,
+              0.005,
+              0.0001
+            ],
+            "condim": 3
+          },
+          {
+            "body": "jaw_soft",
+            "contype": 1,
+            "conaffinity": 1,
+            "friction": [
+              1.0,
+              0.005,
+              0.0001
+            ],
+            "condim": 3
+          }
+        ],
+        "jaw_soft": [
+          {
+            "body": "jaw_soft",
+            "contype": 0,
+            "conaffinity": 0,
+            "friction": [
+              1.0,
+              0.005,
+              0.0001
+            ],
+            "condim": 3
+          }
+        ],
+        "soft_mouth_top": [
+          {
+            "body": "jaw_soft",
+            "contype": 0,
+            "conaffinity": 0,
+            "friction": [
+              1.0,
+              0.005,
+              0.0001
+            ],
+            "condim": 3
+          }
+        ],
+        "bottom_head_shell": [
+          {
+            "body": "jaw_soft",
+            "contype": 0,
+            "conaffinity": 0,
+            "friction": [
+              1.0,
+              0.005,
+              0.0001
+            ],
+            "condim": 3
+          },
+          {
+            "body": "jaw_soft",
+            "contype": 1,
+            "conaffinity": 1,
+            "friction": [
+              1.0,
+              0.005,
+              0.0001
+            ],
+            "condim": 3
+          }
+        ]
+      },
+      "forward_finite": true
+    },
+    {
+      "file": "robot_groundcontact_rollers.xml",
+      "nu": 14,
+      "njnt": 19,
+      "policy_order": [
+        "left_hip_yaw",
+        "left_hip_roll",
+        "left_hip_pitch",
+        "left_knee",
+        "left_ankle",
+        "neck_pitch",
+        "head_pitch",
+        "head_yaw",
+        "head_roll",
+        "right_hip_yaw",
+        "right_hip_roll",
+        "right_hip_pitch",
+        "right_knee",
+        "right_ankle"
+      ],
+      "mouth_named_joints": [],
+      "mouth_geoms": {
+        "jaw": [
+          {
+            "body": "jaw_soft",
+            "contype": 0,
+            "conaffinity": 0,
+            "friction": [
+              1.0,
+              0.005,
+              0.0001
+            ],
+            "condim": 3
+          },
+          {
+            "body": "jaw_soft",
+            "contype": 1,
+            "conaffinity": 1,
+            "friction": [
+              1.0,
+              0.005,
+              0.0001
+            ],
+            "condim": 3
+          }
+        ],
+        "jaw_soft": [
+          {
+            "body": "jaw_soft",
+            "contype": 0,
+            "conaffinity": 0,
+            "friction": [
+              1.0,
+              0.005,
+              0.0001
+            ],
+            "condim": 3
+          }
+        ],
+        "soft_mouth_top": [
+          {
+            "body": "jaw_soft",
+            "contype": 0,
+            "conaffinity": 0,
+            "friction": [
+              1.0,
+              0.005,
+              0.0001
+            ],
+            "condim": 3
+          }
+        ],
+        "bottom_head_shell": [
+          {
+            "body": "jaw_soft",
+            "contype": 0,
+            "conaffinity": 0,
+            "friction": [
+              1.0,
+              0.005,
+              0.0001
+            ],
+            "condim": 3
+          },
+          {
+            "body": "jaw_soft",
+            "contype": 1,
+            "conaffinity": 1,
+            "friction": [
+              1.0,
+              0.005,
+              0.0001
+            ],
+            "condim": 3
+          }
+        ]
+      },
+      "forward_finite": true
+    },
+    {
+      "file": "robot_groundcontact_rollers_backlash.xml",
+      "nu": 14,
+      "njnt": 33,
+      "policy_order": [
+        "left_hip_yaw",
+        "left_hip_roll",
+        "left_hip_pitch",
+        "left_knee",
+        "left_ankle",
+        "neck_pitch",
+        "head_pitch",
+        "head_yaw",
+        "head_roll",
+        "right_hip_yaw",
+        "right_hip_roll",
+        "right_hip_pitch",
+        "right_knee",
+        "right_ankle"
+      ],
+      "mouth_named_joints": [],
+      "mouth_geoms": {
+        "jaw": [
+          {
+            "body": "jaw_soft",
+            "contype": 0,
+            "conaffinity": 0,
+            "friction": [
+              1.0,
+              0.005,
+              0.0001
+            ],
+            "condim": 3
+          },
+          {
+            "body": "jaw_soft",
+            "contype": 1,
+            "conaffinity": 1,
+            "friction": [
+              1.0,
+              0.005,
+              0.0001
+            ],
+            "condim": 3
+          }
+        ],
+        "jaw_soft": [
+          {
+            "body": "jaw_soft",
+            "contype": 0,
+            "conaffinity": 0,
+            "friction": [
+              1.0,
+              0.005,
+              0.0001
+            ],
+            "condim": 3
+          }
+        ],
+        "soft_mouth_top": [
+          {
+            "body": "jaw_soft",
+            "contype": 0,
+            "conaffinity": 0,
+            "friction": [
+              1.0,
+              0.005,
+              0.0001
+            ],
+            "condim": 3
+          }
+        ],
+        "bottom_head_shell": [
+          {
+            "body": "jaw_soft",
+            "contype": 0,
+            "conaffinity": 0,
+            "friction": [
+              1.0,
+              0.005,
+              0.0001
+            ],
+            "condim": 3
+          },
+          {
+            "body": "jaw_soft",
+            "contype": 1,
+            "conaffinity": 1,
+            "friction": [
+              1.0,
+              0.005,
+              0.0001
+            ],
+            "condim": 3
+          }
+        ]
+      },
+      "forward_finite": true
+    },
+    {
+      "file": "robot_walk.xml",
+      "nu": 14,
+      "njnt": 15,
+      "policy_order": [
+        "left_hip_yaw",
+        "left_hip_roll",
+        "left_hip_pitch",
+        "left_knee",
+        "left_ankle",
+        "neck_pitch",
+        "head_pitch",
+        "head_yaw",
+        "head_roll",
+        "right_hip_yaw",
+        "right_hip_roll",
+        "right_hip_pitch",
+        "right_knee",
+        "right_ankle"
+      ],
+      "mouth_named_joints": [],
+      "mouth_geoms": {
+        "jaw": [
+          {
+            "body": "jaw_soft",
+            "contype": 0,
+            "conaffinity": 0,
+            "friction": [
+              1.0,
+              0.005,
+              0.0001
+            ],
+            "condim": 3
+          }
+        ],
+        "jaw_soft": [
+          {
+            "body": "jaw_soft",
+            "contype": 0,
+            "conaffinity": 0,
+            "friction": [
+              1.0,
+              0.005,
+              0.0001
+            ],
+            "condim": 3
+          }
+        ],
+        "soft_mouth_top": [
+          {
+            "body": "jaw_soft",
+            "contype": 0,
+            "conaffinity": 0,
+            "friction": [
+              1.0,
+              0.005,
+              0.0001
+            ],
+            "condim": 3
+          }
+        ],
+        "bottom_head_shell": [
+          {
+            "body": "jaw_soft",
+            "contype": 0,
+            "conaffinity": 0,
+            "friction": [
+              1.0,
+              0.005,
+              0.0001
+            ],
+            "condim": 3
+          }
+        ]
+      },
+      "forward_finite": true
+    },
+    {
+      "file": "robot_walk_backlash.xml",
+      "nu": 14,
+      "njnt": 29,
+      "policy_order": [
+        "left_hip_yaw",
+        "left_hip_roll",
+        "left_hip_pitch",
+        "left_knee",
+        "left_ankle",
+        "neck_pitch",
+        "head_pitch",
+        "head_yaw",
+        "head_roll",
+        "right_hip_yaw",
+        "right_hip_roll",
+        "right_hip_pitch",
+        "right_knee",
+        "right_ankle"
+      ],
+      "mouth_named_joints": [],
+      "mouth_geoms": {
+        "jaw": [
+          {
+            "body": "jaw_soft",
+            "contype": 0,
+            "conaffinity": 0,
+            "friction": [
+              1.0,
+              0.005,
+              0.0001
+            ],
+            "condim": 3
+          }
+        ],
+        "jaw_soft": [
+          {
+            "body": "jaw_soft",
+            "contype": 0,
+            "conaffinity": 0,
+            "friction": [
+              1.0,
+              0.005,
+              0.0001
+            ],
+            "condim": 3
+          }
+        ],
+        "soft_mouth_top": [
+          {
+            "body": "jaw_soft",
+            "contype": 0,
+            "conaffinity": 0,
+            "friction": [
+              1.0,
+              0.005,
+              0.0001
+            ],
+            "condim": 3
+          }
+        ],
+        "bottom_head_shell": [
+          {
+            "body": "jaw_soft",
+            "contype": 0,
+            "conaffinity": 0,
+            "friction": [
+              1.0,
+              0.005,
+              0.0001
+            ],
+            "condim": 3
+          }
+        ]
+      },
+      "forward_finite": true
+    }
+  ],
+  "checkpoint": {
+    "sha256": "387458346862f7244659df4f264127fcbf1fbd5bd028474db3d960090eff2aa4",
+    "keys": [
+      "actor_state_dict",
+      "critic_state_dict",
+      "optimizer_state_dict",
+      "iter",
+      "infos"
+    ],
+    "iter": 61447,
+    "infos": {
+      "env_state": {
+        "common_step_counter": 1486848
+      }
+    },
+    "actor_input": 61,
+    "actor_output": 14,
+    "critic_input": 76,
+    "strict_load": [
+      "<All keys matched successfully>",
+      "<All keys matched successfully>"
+    ],
+    "inference": [
+      {
+        "input": "zero",
+        "actor_shape": [
+          64,
+          14
+        ],
+        "critic_shape": [
+          64,
+          1
+        ],
+        "actor_finite": true,
+        "critic_finite": true
+      },
+      {
+        "input": "normalizer_mean",
+        "actor_shape": [
+          64,
+          14
+        ],
+        "critic_shape": [
+          64,
+          1
+        ],
+        "actor_finite": true,
+        "critic_finite": true
+      },
+      {
+        "input": "synthetic_standardized_normal",
+        "actor_shape": [
+          64,
+          14
+        ],
+        "critic_shape": [
+          64,
+          1
+        ],
+        "actor_finite": true,
+        "critic_finite": true
+      }
+    ],
+    "all_model_weights_finite": true,
+    "normalizer_std_positive": true,
+    "normalizer_count": 1774848,
+    "twist_mean": [
+      0.037671878933906555,
+      -0.0007405625656247139,
+      -0.0022176243364810944
+    ],
+    "twist_std": [
+      0.19549429416656494,
+      0.12342554330825806,
+      0.49860861897468567
+    ],
+    "normalized_phase0": [
+      4.9225382804870605,
+      0.006000075489282608,
+      0.004447625484317541
+    ],
+    "normalizer_not_changed_in_eval": true,
+    "agent_experiment": "velocity",
+    "agent_run_name": "cpu-resume-59949-sep28",
+    "agent_load_run": "2026-09-16_21-17-13_cpu-20m-from-58750",
+    "agent_load_checkpoint": "model_59949.pt",
+    "observation_order": [
+      "base_ang_vel",
+      "projected_gravity",
+      "joint_pos",
+      "joint_vel",
+      "actions",
+      "command",
+      "head_command",
+      "body_command"
+    ],
+    "policy_joint_order": [
+      "left_hip_yaw",
+      "left_hip_roll",
+      "left_hip_pitch",
+      "left_knee",
+      "left_ankle",
+      "neck_pitch",
+      "head_pitch",
+      "head_yaw",
+      "head_roll",
+      "right_hip_yaw",
+      "right_hip_roll",
+      "right_hip_pitch",
+      "right_knee",
+      "right_ankle"
+    ],
+    "saved_home": [
+      0.0,
+      -0.0873,
+      -0.4579,
+      -0.0049,
+      0.453,
+      0.3491,
+      0.3491,
+      0.0,
+      0.0,
+      0.0,
+      0.0873,
+      0.4579,
+      0.0049,
+      -0.453
+    ],
+    "optimizer_lr": [
+      1e-05
+    ]
+  },
+  "saved_snapshot_vs_current": {
+    "walk_xml_equal_normalized_newlines": true,
+    "velocity_cfg_equal_normalized_newlines": true,
+    "constants_AST_equal": {
+      "HOME_FRAME": true,
+      "_BAM_ACTUATOR_KWARGS": true,
+      "MICRODUCK_WALK_ROBOT_CFG": true
+    },
+    "MDP_AST_equal": {
+      "base_ang_vel_imu_misaligned": true,
+      "projected_gravity_imu_misaligned": true,
+      "UniformPoseCommand": true,
+      "head_pose_tracking": true,
+      "body_pose_tracking_6d": true
+    }
+  },
+  "limits": [
+    "Static model compilation and synthetic network inference only",
+    "No dynamic grasp, walking rollout or runner resume in this audit",
+    "No ONNX export or GPU training"
+  ],
+  "decisions": {
+    "hardware": "PARTIALLY VERIFIED",
+    "fetchpick_warm_start": "CONDITIONAL",
+    "long_training": "NO-GO"
+  },
+  "source_notes": {
+    "checkpoint_config_provenance": "User-supplied adjacent YAML and source snapshot; not embedded in checkpoint",
+    "simulator_sha": "023172c8a7d629b5258d90364c13bafe013abbfa",
+    "simulator_pivot": "Display-only STL-fit clue; not calibrated jaw kinematics",
+    "tests": "Existing preflight regression: 7/7 passed"
+  }
+}
